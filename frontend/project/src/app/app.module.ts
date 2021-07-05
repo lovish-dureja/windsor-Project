@@ -3,21 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule } from '@angular/material/slider';
-import { LoginComponent } from './login/login.component';
+import { AgmCoreModule } from '@agm/core';
+import { EventComponent } from './event/event.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    EventComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MatSliderModule
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyC10O0_UrRTtFJOdYo4VfuloSVk7zVbaV0',
+      libraries: ['places']
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
