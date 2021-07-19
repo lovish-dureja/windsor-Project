@@ -1,8 +1,13 @@
 const jwt = require("express-jwt");
-const secret = process.env.JWT_SECRET;
 
-const authenticate = jwt({
-	secret: secret
-});
+module.exports = function (req, res, next){
+	const token = req.header('Authorization');
+	if(!token) return res.status(401).send('Access Denied');
 
-module.exports = authenticate;
+	try{
+		const verified = jwt.verify(token, process.env.TOKEN_SECRET);
+		req.user = verified;
+	}catch(err){
+		return res.status(400).send('Invalid Token')
+	}
+}

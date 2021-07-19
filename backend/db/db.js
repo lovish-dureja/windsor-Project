@@ -1,46 +1,53 @@
 var MongoClient = require('mongodb').MongoClient;
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 
-MongoClient.connect("mongodb+srv://ASE2021:WindsorBillboard@clusterase.nood0.mongodb.net/ASE_DB?retryWrites=true&w=majority", (err, client) => {
+dotenv.config();
+mongoose.connect(process.env.DB_CONNECT, 
+    { useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true, },
+(err, client) => {
     if (err) return console.error(err)
     console.log('Connected to Database')
   })
 
-async function main(){
-    /**
-     * Connection URI. Update <username>, <password>, and <your-cluster-url> to reflect your cluster.
-     * See https://docs.mongodb.com/ecosystem/drivers/node/ for more details
-     */
-    const uri = "mongodb+srv://ASE2021:WindsorBillboard@clusterase.nood0.mongodb.net/ASE_DB?retryWrites=true&w=majority";
+// async function main(){
+//     /**
+//      * Connection URI. Update <username>, <password>, and <your-cluster-url> to reflect your cluster.
+//      * See https://docs.mongodb.com/ecosystem/drivers/node/ for more details
+//      */
+//     const uri = "mongodb+srv://love-12345:love-12345@cluster0.enkhm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
  
 
-    const client = new MongoClient(uri);
+//     const client = new MongoClient(uri);
  
-    try {
-        // Connect to the MongoDB cluster
-        await client.connect();
+//     try {
+//         // Connect to the MongoDB cluster
+//         await client.connect();
  
-        // Make the appropriate DB calls
-         //await  listDatabases(client);
+//         // Make the appropriate DB calls
+//          let databases = await  listDatabases(client);
+//          console.log(databases, 'print all the databases here ');
+//         // return only the latitude and longitude field from the collection
+//         //const projection = { _id: 0, latitude: 1, longitude: 1 };
+//         //const cursor = client.db("ASE_DB").collection("map_data").find().project(projection);
+//         //await cursor.forEach(console.dir);
+ 
+//     } catch (e) {
+//         console.error(e);
+//     } finally { 
+//         await client.close();
+//     }
+// // }
+// async function listDatabases(client){
+//     databasesList = await client.db().admin().listDatabases();
+ 
+//     console.log("Databases:");
+//     databasesList.databases.forEach(db => console.log(` - ${db.name}`));
+// };
 
-        // return only the latitude and longitude field from the collection
-        //const projection = { _id: 0, latitude: 1, longitude: 1 };
-        //const cursor = client.db("ASE_DB").collection("map_data").find().project(projection);
-        //await cursor.forEach(console.dir);
- 
-    } catch (e) {
-        console.error(e);
-    } finally { 
-        await client.close();
-    }
-}
-async function listDatabases(client){
-    databasesList = await client.db().admin().listDatabases();
- 
-    console.log("Databases:");
-    databasesList.databases.forEach(db => console.log(` - ${db.name}`));
-};
-
-main().catch(console.error);
+// main().catch(console.error);
 
 
 /**
