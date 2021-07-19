@@ -1,16 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { EventComponent } from './event/event.component';
+import { EventsComponent} from './Pages/events/events.component';
+import { HomeComponent} from './Pages/home/home.component';
+import { ContactComponent } from './Pages/contact/contact.component';
+import { LoginComponent } from './Pages/login/login.component';
+import { AboutComponent } from './Pages/about/about.component';
+import { GuidelinesComponent } from './Pages/guidelines/guidelines.component';
+import { FooterComponent } from './Components/footer/footer.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: AppComponent,
-    children: [
-      {path: 'event', component: EventComponent},
-    ],
-  }
+  { path: '', component: HomeComponent  },
+  { path: 'about', component: AboutComponent },
+  { path: 'events', component: EventsComponent },
+  { path: 'guidelines', component: GuidelinesComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'login', component: LoginComponent },
+
+
+
+  // otherwise redirect to home
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
