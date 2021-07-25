@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Fri Feb 15 11:49:30 2021
 
-@author: lduan
-"""
 from facebook_scraper import get_posts
 from geopy.geocoders import GoogleV3
 import re
@@ -13,7 +9,7 @@ from pymongo import MongoClient
 loc_lat = []
 loc_long = []
 date = []
-geolocator = GoogleV3(api_key="AIzaSyC10O0_UrRTtFJOdYo4VfuloSVk7zVbaV0")
+geolocator = GoogleV3(api_key="AIzaSyBcC_chlJDnxZkYte0VC04Dc0tvakTZXeY")
 for post in get_posts('Windsorfirefighters', pages=100):
     if re.search(r'(\d+) block of', post['text'], re.M|re.I) or re.search(r'(\d+) (\S+) St', post['text'], re.M|re.I) or re.search(r'(\d+) (\S+) Blvd', post['text'], re.M|re.I) or re.search(r'(\d+) (\S+) Dr', post['text'], re.M|re.I) or re.search(r'(\d+) (\S+) Crt', post['text'], re.M|re.I) or re.search(r'(\d+) (\S+) Cir', post['text'], re.M|re.I):
         clean_posts = re.sub('(http\S+)', '', post['text']).strip().replace('\n', '')
@@ -27,13 +23,16 @@ for post in get_posts('Windsorfirefighters', pages=100):
                 loc = loc_temp + ", " + "Windsor" + ", " + "Ontario" + ", " + "Canada"
             loc_lat.append(geolocator.geocode(loc).latitude)
             loc_long.append(geolocator.geocode(loc).longitude)
-            date.append(post['time'].strftime("%Y-%m-%d"))
+            date.append(post['time'].strftime("%d-%m-%Y"))
 dict = {'latitude': loc_lat, 'longitude': loc_long, 'date': date}
 df = pd.DataFrame(dict)
 df.drop_duplicates(subset=['latitude', 'longitude'], keep='last', inplace=True)
+print(loc_lat,loc_long)
 
-client =  MongoClient("mongodb+srv://ASE2021:WindsorBillboard@clusterase.nood0.mongodb.net/ASE_DB?retryWrites=true&w=majority")
-db = client['ASE_DB']
+client =  MongoClient("mongodb+srv://rahul:rahul1289@cluster-adt1.mhzhb.mongodb.net/ASP_DB?retryWrites=true&w=majority")
+
+#("mongodb+srv://ASE2021:WindsorBillboard@clusterase.nood0.mongodb.net/ASE_DB?retryWrites=true&w=majority")
+db = client['ASP_DB']
 collection = db['map_data']
 collection.delete_many({})
 df.reset_index(inplace=True)
