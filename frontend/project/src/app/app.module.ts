@@ -8,6 +8,7 @@ import { AgmCoreModule } from '@agm/core';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { MapSectionComponent } from './Components/map-section/map-section.component';
 import { MyCarouselComponent} from './Components/my-carousel/my-carousel.component';
+
 import { HomeComponent } from './Pages/home/home.component';
 import { AboutComponent } from './Pages/about/about.component';
 import { ContactComponent } from './Pages/contact/contact.component';
