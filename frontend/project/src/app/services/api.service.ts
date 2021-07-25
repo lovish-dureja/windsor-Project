@@ -11,4 +11,6 @@ url = 'http://localhost:8080/api/login';
   getData(){
     return this.http.get(this.url);
   }
+
+  
 }
