@@ -12,4 +12,6 @@ module.exports = {
     registerSuccess: 'Your account has been registered successfully.',
     tokenExpired: 'Session Expired.',
     success: 'Success',
+    emailAlreadyExist: 'Email already exists, Please try again with a different email',
+    emailNotExist: 'Email and Password is not correct'
 };

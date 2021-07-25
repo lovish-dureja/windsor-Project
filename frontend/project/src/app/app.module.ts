@@ -15,6 +15,7 @@ import { LoginComponent } from './Pages/login/login.component';
 import { EventsComponent } from './Pages/events/events.component';
 import { GuidelinesComponent } from './Pages/guidelines/guidelines.component';
 import { FooterComponent } from './Components/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { FooterComponent } from './Components/footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyC10O0_UrRTtFJOdYo4VfuloSVk7zVbaV0',
       libraries: ['places']
