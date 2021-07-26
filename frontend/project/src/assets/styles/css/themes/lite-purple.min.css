@@ -19589,11 +19589,15 @@ button.ul-accordion__link {
   color: #d2d2d2;
   letter-spacing: 0.2em;
 }
+.faqs-wrap {
+  margin: 0px;
+  padding: 0px;
+}
 .faqs-wrap .accordion .card {
   margin-bottom: 30px;
 }
 .faqs-wrap .accordion .card .card-header {
-  padding: 15px;
+  padding: 10px;
 }
 .faqs-wrap .accordion .card .card-header a {
   color: #000;

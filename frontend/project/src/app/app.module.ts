@@ -5,8 +5,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AgmCoreModule } from '@agm/core';
-import { MapSectionComponent } from './Components/map-section/map-section.component';
-import { MyCarouselComponent} from './Components/my-carousel/my-carousel.component';
 
 import { HomeComponent } from './Pages/home/home.component';
 import { AboutComponent } from './Pages/about/about.component';
@@ -26,12 +24,13 @@ import { TeamComponent } from './Components/team/team.component';
 import { HomeLoginComponent } from './Pages/home-login/home-login.component';
 import { RegisterComponent } from './Pages/register/register.component';
 import { AccountComponent } from './Pages/account/account.component';
+import { VenuesComponent } from './Pages/venues/venues.component';
+import { EventDetailsComponent } from './Pages/event-details/event-details.component';
+import { VenueDetailsComponent } from './Pages/venue-details/venue-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MapSectionComponent,
-    MyCarouselComponent,
     HomeComponent,
     AboutComponent,
     ContactComponent,
@@ -49,6 +48,9 @@ import { AccountComponent } from './Pages/account/account.component';
     HomeLoginComponent,
     RegisterComponent,
     AccountComponent,
+    VenuesComponent,
+    EventDetailsComponent,
+    VenueDetailsComponent,
 
   ],
   imports: [
