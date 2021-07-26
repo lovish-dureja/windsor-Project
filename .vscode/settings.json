@@ -1,4 +1,7 @@
 {
+<<<<<<< HEAD
+    "python.pythonPath": "C:\\Users\\Rahul patel\\anaconda3\\python.exe"
+=======
   "C_Cpp_Runner.warnings": [
     "-Wall",
     "-Wextra",
@@ -12,4 +15,5 @@
   "C_Cpp_Runner.excludeSearch": [],
   "C_Cpp_Runner.enableWarnings": true,
   "C_Cpp_Runner.warningsAsError": false
+>>>>>>> 5a801d9831934d7bbd7688612f2feda53f173b10
 }
