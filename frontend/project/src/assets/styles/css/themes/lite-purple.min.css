@@ -17582,7 +17582,12 @@ select.form-control {
 }
 .main-header.header-fixed-default .nav-link {
   color: #fff;
-  font-size: large;
+  font-size: 20px;
+}
+.main-header.header-fixed-default .logo-name {
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
 }
 .main-header.header-fixed-default #dropdownMegaMenuButton {
   color: #fff !important;
