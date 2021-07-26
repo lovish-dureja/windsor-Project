@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- coding: UTF-8 -*-
 
 from facebook_scraper import get_posts
 from geopy.geocoders import GoogleV3
@@ -24,10 +24,11 @@ for post in get_posts('Windsorfirefighters', pages=100):
             loc_lat.append(geolocator.geocode(loc).latitude)
             loc_long.append(geolocator.geocode(loc).longitude)
             date.append(post['time'].strftime("%d-%m-%Y"))
-dict = {'latitude': loc_lat, 'longitude': loc_long, 'date': date}
+dict = {'latitude': loc_lat, 'longitude': loc_long}
 df = pd.DataFrame(dict)
 df.drop_duplicates(subset=['latitude', 'longitude'], keep='last', inplace=True)
-print(loc_lat,loc_long)
+#df.to_excel('mapdata.xlsx', header=True, index=False)
+#print(loc_lat,loc_long)
 
 client =  MongoClient("mongodb+srv://rahul:rahul1289@cluster-adt1.mhzhb.mongodb.net/ASP_DB?retryWrites=true&w=majority")
 
