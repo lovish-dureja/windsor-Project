@@ -1,4 +1,4 @@
-# -*- coding: UTF-8 -*-
+ #-*- coding: utf-8 -*-
 
 from facebook_scraper import get_posts
 from geopy.geocoders import GoogleV3

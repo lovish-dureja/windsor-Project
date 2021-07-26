@@ -35,7 +35,7 @@ exports.fetchDataFromApi = async function (req, res) {
 
 exports.register = async function (req, res) {
     try{
-        // api va;idations
+        // api validations
         const { error } = registerValidation(req.body)
         if(error){
             return errorResponse(res, httpCodes.badReq,error.details[0].message);
