@@ -8,6 +8,9 @@ import { LoginComponent } from './Pages/login/login.component';
 import { AboutComponent } from './Pages/about/about.component';
 import { GuidelinesComponent } from './Pages/guidelines/guidelines.component';
 import { FooterComponent } from './Components/footer/footer.component';
+import { RegisterComponent } from './Pages/register/register.component';
+import { AccountComponent } from './Pages/account/account.component';
+import { HomeLoginComponent } from './Pages/home-login/home-login.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent  },
@@ -16,6 +19,9 @@ const routes: Routes = [
   { path: 'guidelines', component: GuidelinesComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent},
+  { path: 'account', component: AccountComponent},
+  { path: 'home-login', component: HomeLoginComponent},
 
 
 
