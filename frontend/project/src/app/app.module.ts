@@ -59,7 +59,6 @@ import { VenueDetailsComponent } from './Pages/venue-details/venue-details.compo
     NgbModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyC10O0_UrRTtFJOdYo4VfuloSVk7zVbaV0',
       libraries: ['places']
     })
   ],
